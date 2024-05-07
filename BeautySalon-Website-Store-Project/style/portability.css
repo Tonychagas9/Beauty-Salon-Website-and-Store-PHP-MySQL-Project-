@@ -1,0 +1,225 @@
+:root{
+   --gray:#383838;
+   --black:#1a1a1a;
+   --white:#fff;
+   --light-color:#666;
+   --light-white:#ccc;
+   --light-bg:#f5f5f5;
+   --border:.1rem solid var(--black);
+   --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+   --whatsapp-color:rgb(37, 211,102);
+   }
+
+@media (max-width:450px){
+   html{
+      font-size: 50%;
+   }
+   .heading h3{
+      font-size: 3.5rem;
+   }
+   .title{
+      font-size: 3rem;
+   }
+}
+
+@media screen and (max-width: 600px) {
+   .header-2 {
+      display: none;
+   }
+   label {
+      display: flex;
+   }
+   .servico .box-container{
+      display: grid;
+      grid-template-columns: repeat;
+      text-align: center;
+   }
+   .header-0 {
+      display: none;
+   }
+}
+
+@media (max-width:768px){
+   #menu-btn{
+      display: inline-block;
+   }
+   .header .header-2 .flex .navbar{
+      position: absolute;
+      top:99%; left:0; right:0;
+      background-color: var(--white);
+      border-top: var(--border);
+      border-bottom: var(--border);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+   }
+   .header .header-2 .flex .navbar.active{
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+   .header .header-2 .flex .navbar a{
+      display: block;
+      font-size: 2.5rem;
+      margin:2rem;
+   }
+   .home .content h3{
+      font-size: 3.5rem;
+   }
+}
+ 
+@media screen and (max-width: 992px) {
+   html{
+      font-size: 55%;
+   }
+   .header-2 {
+      display: none;
+   }
+   .header-0 {
+      display: none;
+   }
+   label {
+         display: flex;
+   }    
+   .popup {
+      display: none;
+   }
+   #popup {
+      display: none;
+   }
+   .center{
+      display: none;
+   }
+ }
+ 
+@media screen and (max-width: 1024px) {
+   .header-2 {
+      display: none;
+   }
+   .header-0 {
+      display: none; 
+   }
+   label {
+      display: flex;
+   }
+   .popup {
+   display: none;
+   }
+   #popup {
+      display: none;
+   }
+   .center{
+      display: none;
+   }
+}
+
+/* Humburger Menu */
+
+label {
+   display: none;
+   font-size: 2vh;
+}
+    
+label .menu {
+  position: absolute;
+  right: -100px;
+  top: -100px;
+  z-index: 100;
+  width: 200px;
+  height: 200px;
+  background: var(--white);
+  border-radius: 50% 50% 50% 50%;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  box-shadow: 0 0 0 0 var(--white), 0 0 0 0 var(--white);
+}
+
+label .hamburger {
+  position: absolute;
+  top: 135px;
+  left: 50px;
+  width: 30px;
+  height: 2px;
+  background: var(--black);
+  display: block;
+  -webkit-transform-origin: center;
+  transform-origin: center;
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+label .hamburger:after, 
+label .hamburger:before {
+  -webkit-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--black);
+}
+
+label .hamburger:before { 
+   top: -10px; 
+}
+
+label .hamburger:after { 
+   bottom: -10px; 
+}
+
+label input { 
+   display: none; 
+}
+
+label input:checked + .menu {
+  box-shadow: 0 0 0 100vw var(--white), 0 0 0 100vh var(--white);
+  border-radius: 0;
+}
+
+label input:checked + .menu .hamburger {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label input:checked + .menu .hamburger:after {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  bottom: 0;
+  
+}
+
+label input:checked + .menu .hamburger:before {
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  top: 0;
+}
+
+label input:checked + .menu + ul { 
+   opacity: 1; 
+}
+
+label ul {
+  z-index: 200;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: .25s 0s ease-in-out;
+  transition: .25s 0s ease-in-out;
+}
+
+label a {
+  font-size: large;
+  margin-bottom: 3em;
+  display: block;
+  color: var(--black);
+}
+
+h1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  text-align: center;
+} 
